@@ -13,6 +13,8 @@ public class BoardRepository {
 
     private static long count = 1L;
     private static final Map<Long, Board> dataBase = new HashMap<>();
+    private static long basicUserIdx = 20100337L;
+    private static String basicNickName = "뉴진스";
 
     // Create
     public Board saveToDB(Board board) {
@@ -42,4 +44,12 @@ public class BoardRepository {
     public void deleteContent(Long contentNumber) {
         dataBase.remove(contentNumber);
     }
+
+    public String getBasicNickName() {
+        return basicNickName;
+    }
+    public Long getBasicUserIdx() {
+        return basicUserIdx;
+    }
+
 }

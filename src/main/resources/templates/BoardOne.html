@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <textarea id="textArea"></textarea>
+</body>
+    <script th:inline="javascript">
+        const textValue = [[${boardOne.content}]];
+        document.querySelector('#textArea').innerText = textValue;
+    </script>
+</html>

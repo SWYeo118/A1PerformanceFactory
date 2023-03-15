@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="../static/css/main.css"/>
-    <h1>A1PerformanceFactory 게시판</h1>
+    <br><h1>A1PerformanceFactory 게시판</h1>
 </head>
 <body>
 <div class="container">
-
-    <td style="width: 200px">ID</td>
-    <td style="width: 200px">제목</td>
-    <td style="width: 200px">작성자</td>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">게시글 번호</th>
+            <th scope="col" style="width: 40%">제목</th>
+            <th scope="col">작성자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="boardOne : ${BoardAll}">
+            <td><a th:text="${boardOne.contentNumber}">번호</a></td>
+            <td><a th:href="${boardOne.contentNumber}" th:text="${boardOne.title}">제목</a></td>
+            <td><a th:text="${boardOne.nickName}">작성</a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<button>글쓰기</button>
+<button onclick="location.href='WrittingPage'">글쓰기</button>
 </body>
 </html>
