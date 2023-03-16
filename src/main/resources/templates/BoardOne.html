@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <br><h1>글 확인하기</h1>
 </head>
 <body>
-    <textarea id="textArea"></textarea>
+    <div class="container">
+        <table>
+            <thead>
+            <span>제목 : </span><input id="title" style="width:89%; height: 10%" th:value="${boardOne.title}" readonly></input>
+            </thead>
+            <tbody>
+            <textarea id="textArea" style="width: 99%; height: 79%; resize: none; position: relative; padding-bottom: 0px" readonly></textarea>
+            <span>닉네임 : </span><input id="nickName" style="width: 86%; height: 6.5%; margin: 0px" th:value="${boardOne.nickName}" readonly></input>
+            </tbody>
+        </table>
+    </div>
+<button th:onclick="|location.href='/EditBoard/${contentNumberLong}'|">수정하기</button>
+<button onclick="location.href='/'">목록</button>
 </body>
     <script th:inline="javascript">
         const textValue = [[${boardOne.content}]];

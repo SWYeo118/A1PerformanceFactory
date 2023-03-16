@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <br><h1>글쓰기</h1>
+</head>
+<body>
+    <form action="/CreateBoard" method="post">
+            <div class="container">
+                <table>
+                    <thead>
+                    <span>제목 : </span><input name="title" style="width:89%; height: 10%"></input>
+                    </thead>
+                    <tbody>
+                    <textarea name="content" style="width: 99%; height: 79%; resize: none; position: relative; padding-bottom: 0px"></textarea>
+                    <span>닉네임 : </span><input name="nickName" style="width: 86%; height: 6.5%; margin: 0px" th:value="${nickName}"></input>
+                    </tbody>
+                </table>
+            </div>
+        <button>작성하기</button>
+    </form>
+    <button onclick="location.href='/'">목록</button>
+</body>
+<script>
+
+</script>
+</html>

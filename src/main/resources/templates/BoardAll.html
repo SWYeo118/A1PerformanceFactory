@@ -18,13 +18,13 @@
         </thead>
         <tbody>
         <tr th:each="boardOne : ${BoardAll}">
-            <td><a th:text="${boardOne.contentNumber}">번호</a></td>
+            <td><a th:href="${boardOne.contentNumber}" th:text="${boardOne.contentNumber}">번호</a></td>
             <td><a th:href="${boardOne.contentNumber}" th:text="${boardOne.title}">제목</a></td>
             <td><a th:text="${boardOne.nickName}">작성</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<button onclick="location.href='WrittingPage'">글쓰기</button>
+<button onclick="location.href='WriteBoard'">글쓰기</button>
 </body>
 </html>

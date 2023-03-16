@@ -38,6 +38,7 @@ public class BoardRepository {
         Board oneContent = findContentByContentNumber(contentNumber);
         oneContent.setContent(board.getContent());
         oneContent.setTitle(board.getTitle());
+        oneContent.setNickName(board.getNickName());
     }
 
     // Delete
@@ -52,4 +53,10 @@ public class BoardRepository {
         return basicUserIdx;
     }
 
+    public void updateBasicNickName(Board board) {
+        basicNickName = board.getNickName();
+    }
+    public void updateBasicUserIdx() {
+        basicUserIdx++;
+    }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <br><h1>글 수정하기</h1>
+</head>
+<body>
+    <form action="/UpdateBoard" method="post">
+            <div class="container">
+                <table>
+                    <thead>
+                    <span>제목 : </span><input name="title" style="width:89%; height: 10%" th:value="${boardOne.title}"></input>
+                    </thead>
+                    <tbody>
+                    <textarea id="textArea" name="content" style="width: 99%; height: 79%; resize: none; position: relative; padding-bottom: 0px"></textarea>
+                    <span>닉네임 : </span><input name="nickName" style="width: 86%; height: 6.5%; margin: 0px" th:value="${boardOne.nickName}"></input>
+                    </tbody>
+                </table>
+            </div>
+        <input type="hidden" name="contentNumber" th:value="${contentNumberLong}" />
+        <button>수정</button>
+    </form>
+    <button onclick="location.href='/'">목록</button>
+</body>
+<script th:inline="javascript">
+    const textValue = [[${boardOne.content}]];
+    document.querySelector('#textArea').innerText = textValue;
+</script>
+</html>
